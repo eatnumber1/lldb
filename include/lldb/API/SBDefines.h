@@ -78,6 +78,7 @@ class SBTypeList;
 class SBValue;
 class SBValueList;
 class SBWatchpoint;
+class SBUnixSignals;
 
 }
 

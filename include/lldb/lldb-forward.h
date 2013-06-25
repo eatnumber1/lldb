@@ -235,6 +235,7 @@ class   TypeListImpl;
 class   TypeMemberImpl;
 class   TypeNameSpecifierImpl;
 class   UUID;
+class   UnixSignals;
 class   Unwind;
 class   UnwindAssembly;
 class   UnwindPlan;

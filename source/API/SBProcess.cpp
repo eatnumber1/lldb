@@ -39,6 +39,7 @@
 #include "lldb/API/SBThread.h"
 #include "lldb/API/SBStream.h"
 #include "lldb/API/SBStringList.h"
+#include "lldb/API/SBUnixSignals.h"
 
 using namespace lldb;
 using namespace lldb_private;
@@ -834,6 +835,19 @@ SBProcess::Signal (int signo)
                      sstr.GetData());
     }
     return sb_error;
+}
+
+SBUnixSignals
+SBProcess::GetUnixSignals()
+{
+    SBUnixSignals sb_unix_signals;
+    ProcessSP process_sp(GetSP());
+    if (process_sp)
+    {
+        sb_unix_signals.SetPtr(&process_sp->GetUnixSignals());
+    }
+
+    return sb_unix_signals;
 }
 
 void

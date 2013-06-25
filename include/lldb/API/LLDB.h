@@ -50,5 +50,6 @@
 #include "lldb/API/SBType.h"
 #include "lldb/API/SBValue.h"
 #include "lldb/API/SBValueList.h"
+#include "lldb/API/SBUnixSignals.h"
 
 #endif  // LLDB_LLDB_h_
