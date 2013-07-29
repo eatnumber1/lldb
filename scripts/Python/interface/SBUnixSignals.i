@@ -63,7 +63,7 @@ public:
         def get_unix_signals_list(self):
             signals = []
             for idx in range(0, self.GetNumSignals()):
-                signals.append(self.GetSignalAtIndex(sig))
+                signals.append(self.GetSignalAtIndex(idx))
             return signals
 
         __swig_getmethods__["signals"] = get_unix_signals_list
