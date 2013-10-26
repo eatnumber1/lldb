@@ -4307,6 +4307,15 @@ check_op_param (uint32_t op_kind, bool unary, bool binary, uint32_t num_params)
         return false;
 }
 
+clang::EnumDecl *
+ClangASTType::GetAsEnumDecl () const
+{
+    const EnumType *enum_type = dyn_cast<EnumType>(GetCanonicalQualType());
+    if (enum_type)
+        return enum_type->getDecl();
+    return NULL;
+}
+
 clang::RecordDecl *
 ClangASTType::GetAsRecordDecl () const
 {

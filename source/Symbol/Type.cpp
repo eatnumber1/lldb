@@ -30,6 +30,8 @@
 
 #include "llvm/ADT/StringRef.h"
 
+#include "clang/AST/Decl.h"
+
 using namespace lldb;
 using namespace lldb_private;
 
@@ -987,4 +989,13 @@ TypeImpl::GetName ()
     if (m_clang_ast_type.IsValid())
         return m_clang_ast_type.GetConstTypeName();
     return ConstString();
+}
+
+TypeEnumMemberImpl::TypeEnumMemberImpl (const clang::EnumConstantDecl* enum_member_decl,
+                                        const lldb_private::ClangASTType& integer_type) :
+    m_value(enum_member_decl->getInitVal()),
+    m_integer_type(new TypeImpl(integer_type))
+{
+    m_name = ConstString(enum_member_decl->getNameAsString().c_str());
+    m_valid = true;
 }

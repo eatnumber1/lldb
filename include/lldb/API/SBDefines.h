@@ -67,6 +67,8 @@ class SBTarget;
 class SBThread;
 class SBType;
 class SBTypeCategory;
+class SBTypeEnumMember;
+class SBTypeEnumMemberList;
 class SBTypeFilter;
 class SBTypeFormat;
 class SBTypeNameSpecifier;
