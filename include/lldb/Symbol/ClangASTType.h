@@ -642,6 +642,9 @@ public:
     clang::ObjCInterfaceDecl *
     GetAsObjCInterfaceDecl () const;
 
+    clang::EnumDecl *
+    GetAsEnumDecl () const;
+
     void
     Clear()
     {
